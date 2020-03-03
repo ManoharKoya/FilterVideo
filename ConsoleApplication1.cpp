@@ -35,13 +35,13 @@ void record10sec() {
     int frameHeight = cap.get(CAP_PROP_FRAME_HEIGHT);
 
     VideoWriter output("output.avi", VideoWriter::fourcc('M', 'J', 'P', 'G'), 24.0, Size(frameWidth, frameHeight), true);
-
+    const std::clock_t begin = clock();
     while (1){
         cap.read(frame);
         imshow("camera", frame);
         output.write(frame);
-        if (waitKey(30) == 's') break;
-
+        if (waitKey(30) >= 0) break;
+        if ((float(clock() - begin) / CLOCKS_PER_SEC) >= 10.0) break;
     }
     output.release();
     cap.release();
@@ -49,7 +49,7 @@ void record10sec() {
     return;
 }
 void extractRedAndSmooth() {
-    VideoCapture cap("C:\\Users\\MK\\source\\repos\\ConsoleApplication1\\output.avi");
+    VideoCapture cap("output.avi");
     if (!cap.isOpened()) { cout << "NO file"; return; }
     VideoWriter outputR("res_red.avi", cap.get(CAP_PROP_FOURCC), 24.0, Size(cap.get(CAP_PROP_FRAME_WIDTH), cap.get(CAP_PROP_FRAME_HEIGHT)), true);
     Mat frame, res;
