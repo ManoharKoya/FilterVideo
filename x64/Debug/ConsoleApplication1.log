@@ -1,0 +1,25 @@
+﻿  ConsoleApplication1.cpp
+C:\Users\MK\source\repos\ConsoleApplication1\ConsoleApplication1.cpp(34,20): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\MK\source\repos\ConsoleApplication1\ConsoleApplication1.cpp(35,21): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\MK\source\repos\ConsoleApplication1\ConsoleApplication1.cpp(54,115): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\MK\source\repos\ConsoleApplication1\ConsoleApplication1.cpp(54,84): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\MK\source\repos\ConsoleApplication1\ConsoleApplication1.cpp(54,47): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\MK\source\repos\ConsoleApplication1\ConsoleApplication1.cpp(66,80): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\MK\source\repos\ConsoleApplication1\ConsoleApplication1.cpp(66,49): warning C4244: 'argument': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=int
+          ]
+  ConsoleApplication1.vcxproj -> C:\Users\MK\source\repos\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe
