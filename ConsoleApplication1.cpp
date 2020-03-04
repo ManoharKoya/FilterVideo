@@ -26,6 +26,12 @@ void test() {
     waitKey(0);
     return;
 }
+Mat GaussBlur3(Mat frame) {
+    Mat res;
+    if (!frame.data) { cout << "Empty frame";  return res; }
+    GaussianBlur(frame, res, Size(3, 3), 0);
+    return res;
+}
 void record10sec() {
     VideoCapture cap(0);
     
@@ -65,6 +71,7 @@ void extractRedAndSmooth() {
             if (i != channel) 
                 spl[i] = Mat::zeros(Size(cap.get(CAP_PROP_FRAME_WIDTH), cap.get(CAP_PROP_FRAME_HEIGHT)), spl[0].type());
         merge(spl, res);
+        res = GaussBlur3(res);
         outputR << res;
     }
     cout << "DONE..";
@@ -86,14 +93,3 @@ int main() {
     solve();
     return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
